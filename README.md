@@ -9,7 +9,7 @@ This looks something like:
 
 ![foreman_custom_banner_preview](foreman_custom_banner.png)
 
-Customize the banner by altering the plugin settings within Foreman.
+Customize the banner by altering the plugin settings within Foreman and refreshing your browser.
 
 ## Installation
 
