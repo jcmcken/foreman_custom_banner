@@ -5,14 +5,11 @@ A Foreman plugin which provides a configurable, custom banner for the Foreman UI
 The purpose of this plugin is to provide a simple way to distinguish multiple
 installations of Foreman, e.g. a production vs. a development installation.
 
-## Configuration
+This looks something like:
 
-The ``foreman_custom_banner`` plugin comes with a few settings which can be configured
-within the Foreman UI:
+![foreman_custom_banner_preview](foreman_custom_banner.png)
 
-* ``custom_banner_enabled``: Whether to enable the custom banner
-* ``custom_banner_text``: Text to set on the custom banner
-* ``custom_banner_style``: CSS styling for the custom banner.
+Customize the banner by altering the plugin settings within Foreman.
 
 ## Installation
 
