@@ -1,3 +1,5 @@
-<div>
-  <%= h(custom_banner_text || "Configure the custom banner in your Foreman settings!") %>
+<% if custom_banner_enabled -%>
+<div style="<%= h(custom_banner_style) %>">
+  <%= h(custom_banner_text) %>
 </div>
+<% end -%>
