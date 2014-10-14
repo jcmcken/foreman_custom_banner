@@ -53,7 +53,7 @@ cp -pa .%{gem_dir}/* \
 
 find %{buildroot}%{gem_instdir} -type f | xargs chmod ugo+r
 
-%if %{scl:1}%{!?scl:0}
+%if %{?scl:1}%{!?scl:0}
 mkdir -p %{buildroot}%{_root_datadir}/foreman/bundler.d
 ln -s %{gem_instdir}/install/foreman_custom_banner.rb \
     %{buildroot}%{_root_datadir}/foreman/bundler.d
