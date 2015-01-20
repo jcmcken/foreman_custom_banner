@@ -1,5 +1,5 @@
-<% if custom_banner_enabled -%>
-<div style="<%= h(custom_banner_style) %>">
-  <%= h(custom_banner_text) %>
+<% if Setting[:custom_banner_enabled] -%>
+<div style="<%= h(Setting[:custom_banner_style]) %>">
+  <%= h(Setting[:custom_banner_text]) %>
 </div>
 <% end -%>
