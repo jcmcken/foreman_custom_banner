@@ -6,7 +6,7 @@
 
 Summary: Plugin for Foreman that adds a custom banner
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 0.0.1
+Version: 0.0.2
 Release: 1%{?dist}
 Group: Development/Languages
 License: Apache License 2.0
@@ -60,6 +60,7 @@ ln -s %{gem_instdir}/install/foreman_custom_banner.rb \
 %endif
 
 rm %{buildroot}/%{gem_instdir}/.gitignore
+rm %{buildroot}/%{gem_instdir}/*.spec
 
 %files
 %dir %{gem_instdir}
@@ -81,5 +82,7 @@ rm %{buildroot}/%{gem_instdir}/.gitignore
 
 
 %changelog
+* Mon Feb 16 2015 Jon McKenzie - 0.0.2-1
+- Initial release.
 * Sat Oct 11 2014 Jon McKenzie - 0.0.1-1
 - Initial release.
