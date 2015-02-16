@@ -76,6 +76,7 @@ rm %{buildroot}/%{gem_instdir}/*.spec
 %doc %{gem_instdir}/README.md
 %doc %{gem_instdir}/CHANGES.md
 %doc %{gem_instdir}/LICENSE
+%doc %{gem_instdir}/CONTRIBUTORS
 
 %files doc
 %doc %{gem_dir}/doc/%{gem_name}-%{version}
