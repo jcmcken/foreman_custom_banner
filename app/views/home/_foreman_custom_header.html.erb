@@ -1,5 +1,13 @@
 <% if Setting[:custom_banner_enabled] -%>
+<% if Setting[:custom_banner_url].empty? or Setting[:custom_banner_url_text].empty? -%>
 <div style="<%= h(Setting[:custom_banner_style]) %>">
   <%= h(Setting[:custom_banner_text]) %>
 </div>
+<% else %>
+<div style="<%= h(Setting[:custom_banner_style]) %>">
+  <%= h(Setting[:custom_banner_text]) %>
+  <br>
+  <a href="<%= h(Setting[:custom_banner_url] %>" target="_blank"><%= h(Setting[:custom_banner_url_text) %></a>
+</div>
+<% end -%>
 <% end -%>
