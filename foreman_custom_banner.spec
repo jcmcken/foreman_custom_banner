@@ -6,19 +6,19 @@
 
 Summary: Plugin for Foreman that adds a custom banner
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 0.0.2
+Version: 0.0.3
 Release: 1%{?dist}
 Group: Development/Languages
 License: Apache License 2.0
 URL: https://github.com/jcmcken/foreman_custom_banner
 Source0: %{gem_name}-%{version}.gem
 Requires: %{?scl_prefix}ruby(abi) = %{rubyabi}
-Requires: %{?scl_prefix}ruby(rubygems) 
-Requires: %{?scl_prefix}rubygem(deface) 
+Requires: %{?scl_prefix}ruby(rubygems)
+Requires: %{?scl_prefix}rubygem(deface)
 %{?scl:BuildRequires: scl-utils-build}
 BuildRequires: %{?scl_prefix}ruby(abi) = %{rubyabi}
-BuildRequires: %{?scl_prefix}ruby(rubygems) 
-BuildRequires: %{?scl_prefix}rubygems-devel 
+BuildRequires: %{?scl_prefix}ruby(rubygems)
+BuildRequires: %{?scl_prefix}rubygems-devel
 BuildArch: noarch
 Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 
@@ -83,6 +83,8 @@ rm %{buildroot}/%{gem_instdir}/*.spec
 
 
 %changelog
+* Thu Apr 14 2016 Jon McKenzie - 0.0.3-1
+- Bump to 0.0.3.
 * Mon Feb 16 2015 Jon McKenzie - 0.0.2-1
 - Initial release.
 * Sat Oct 11 2014 Jon McKenzie - 0.0.1-1

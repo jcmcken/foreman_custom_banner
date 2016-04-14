@@ -7,9 +7,9 @@ module ForemanCustomBanner
         (Setting.table_exists? rescue(false))
     end
 
-    initializer 'foreman_custom_banner.register_plugin', :after => :finisher_hook do |app|
+    initializer 'foreman_custom_banner.register_plugin', :before => :finisher_hook do |app|
       Foreman::Plugin.register :foreman_custom_banner do
-        requires_foreman '>= 1.5'
+        requires_foreman '>= 1.9'
       end
     end
   end
