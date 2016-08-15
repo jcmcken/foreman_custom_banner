@@ -1,5 +1,5 @@
 %global gem_name foreman_custom_banner
-%global rubyabi 1.9.1
+%global _scl_prefix /opt/theforeman
 
 %{?scl:%scl_package rubygem-%{gem_name}}
 %{?scl:%global pkg_name %{name}}
@@ -7,18 +7,19 @@
 Summary: Plugin for Foreman that adds a custom banner
 Name: %{?scl_prefix}rubygem-%{gem_name}
 Version: 0.0.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
-License: Apache License 2.0
+License: GPL
 URL: https://github.com/jcmcken/foreman_custom_banner
 Source0: %{gem_name}-%{version}.gem
-Requires: %{?scl_prefix}ruby(abi) = %{rubyabi}
-Requires: %{?scl_prefix}ruby(rubygems)
+Requires: %{?scl_prefix_ruby}ruby
+Requires: %{?scl_prefix_ruby}ruby(rubygems)
 Requires: %{?scl_prefix}rubygem(deface)
 %{?scl:BuildRequires: scl-utils-build}
-BuildRequires: %{?scl_prefix}ruby(abi) = %{rubyabi}
-BuildRequires: %{?scl_prefix}ruby(rubygems)
-BuildRequires: %{?scl_prefix}rubygems-devel
+%{?scl:BuildRequires: %{scl_prefix_ruby}scldevel}
+BuildRequires: %{?scl_prefix_ruby}ruby
+BuildRequires: %{?scl_prefix_ruby}ruby(rubygems)
+BuildRequires: %{?scl_prefix_ruby}rubygems-devel
 BuildArch: noarch
 Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 
@@ -61,6 +62,7 @@ ln -s %{gem_instdir}/install/foreman_custom_banner.rb \
 
 rm %{buildroot}/%{gem_instdir}/.gitignore
 rm %{buildroot}/%{gem_instdir}/*.spec
+rm -rf %{buildroot}%{gem_instdir}/doc/
 
 %files
 %dir %{gem_instdir}
@@ -68,7 +70,6 @@ rm %{buildroot}/%{gem_instdir}/*.spec
 %{gem_instdir}/install
 %{gem_instdir}/app
 %{gem_instdir}/Gemfile
-%{gem_instdir}/foreman_custom_banner.png
 %exclude %{gem_dir}/cache/%{gem_name}-%{version}.gem
 %exclude %{gem_instdir}/%{gem_name}.gemspec
 %{gem_dir}/specifications/%{gem_name}-%{version}.gemspec
@@ -83,6 +84,9 @@ rm %{buildroot}/%{gem_instdir}/*.spec
 
 
 %changelog
+* Thu Aug 15 2016 Jon McKenzie - 0.0.3-2
+- Make spec compatible with Foreman 1.10+
+- Fix license in spec file
 * Thu Apr 14 2016 Jon McKenzie - 0.0.3-1
 - Bump to 0.0.3.
 * Mon Feb 16 2015 Jon McKenzie - 0.0.2-1

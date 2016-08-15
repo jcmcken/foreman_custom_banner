@@ -38,3 +38,12 @@ value:
 You can alter the style of the custom banner by changing the values for the
 `custom_banner_style` field. This field will accept any CSS style configuration
 
+# Building the Package
+
+YMMV, but this should work okay if you have the right build dependencies installed:
+
+```console
+$ gem build foreman_custom_banner.gemspec
+$ mv *.gem $(rpm --eval '%{_sourcedir}')
+$ rpmbuild -ba foreman_custom_banner.spec --define 'scl tfm'
+```
